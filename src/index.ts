@@ -1,17 +1,37 @@
 /**
+ * Context is used to pass informal data to the exception,
+ * We used a string any record to keep the flexibility.
+ */
+export type CustomErrorContext = Record<'status' | string, any>;
+
+/**
  * You can refer to this typescript wiki:
  * https://github.com/Microsoft/TypeScript-wiki/blob/main/Breaking-Changes.md#extending-built-ins-like-error-array-and-map-may-no-longer-work
  */
-export class CustomError extends Error {
+export abstract class AbstractCustomError extends Error {
 
-    constructor(public message: string, public code: number, public context?: string) {
+    protected constructor(public message: string, public context?: CustomErrorContext) {
         super(message);
         // Set the prototype explicitly.
-        Object.setPrototypeOf(this, CustomError.prototype);
+        Object.setPrototypeOf(this, AbstractCustomError.prototype);
+    }
+}
+
+export const HTTP_UNKNOWN_ERROR: number = 520;
+
+export class CustomHttpError implements AbstractCustomError {
+    public name: string;
+
+    constructor(public message: string, public context?: CustomErrorContext) {
+        this.name = 'HTTP Error';
     }
 
-    errorMessage() {
-        return `${this.message} (${this.code}): ${this.context}`;
+    /**
+     * Get HTTP Error status code
+     * status code will be retrieved from context.code
+     */
+    statusCode(): number {
+        return this.context?.status || HTTP_UNKNOWN_ERROR;
     }
 }
 
@@ -19,13 +39,13 @@ export class CustomError extends Error {
  * Standard Errors definitions
  * Error names and code comes from standard RFC HTTP status codes
  * https://fr.wikipedia.org/wiki/Liste_des_codes_HTTP
- * @param context
- * @constructor
  */
-export const BadRequest = (context?: string) => new CustomError('Bad Request', 400, context);
-export const Unauthorized = (context?: string) => new CustomError('Unauthorized', 401, context);
-export const Forbidden = (context?: string) => new CustomError('Forbidden', 403, context);
-export const NotFound = (context?: string) => new CustomError('Not Found', 404, context);
-export const RequestTimeOut = (context?: string) => new CustomError('Request Time-out', 408, context);
-export const InternalServerError = (context?: string) => new CustomError('Internal Server Error', 500, context);
-export const NotImplemented = (context?: string) => new CustomError('Not Implemented', 501, context);
+/*
+export const BadRequest = (context?: string) => new CustomHttpError('Bad Request', { status: 400 });
+export const Unauthorized = (context?: string) => new CustomHttpError('Unauthorized', { status: 401 });
+export const Forbidden = (context?: string) => new CustomHttpError('Forbidden', { status: 403 });
+export const NotFound = (context?: string) => new CustomHttpError('Not Found', { status: 404 });
+export const RequestTimeOut = (context?: string) => new CustomHttpError('Request Time-out', { status: 408 });
+export const InternalServerError = (context?: string) => new CustomHttpError('Internal Server Error', { status: 500 });
+export const NotImplemented = (context?: string) => new CustomHttpError('Not Implemented', { status: 501 });
+*/
