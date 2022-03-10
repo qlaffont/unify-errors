@@ -25,27 +25,6 @@ export class CustomError implements AbstractCustomError {
     }
 }
 
-
-// ---- To move in standard http errors
-export const HTTP_UNKNOWN_ERROR: number = 520;
-
-export class CustomHttpError implements AbstractCustomError {
-    public name: string;
-
-    constructor(public message: string, public context?: CustomErrorContext) {
-        this.name = 'HTTP Error';
-    }
-
-    /**
-     * Get HTTP Error status code
-     * status code will be retrieved from context.code
-     */
-    statusCode(): number {
-        return this.context?.status || HTTP_UNKNOWN_ERROR;
-    }
-}
-// ----
-
 /**
  * Standard Errors definitions
  * Error names and code comes from standard RFC HTTP status codes
