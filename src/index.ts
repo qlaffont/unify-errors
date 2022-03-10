@@ -17,6 +17,16 @@ export abstract class AbstractCustomError extends Error {
     }
 }
 
+export class CustomError implements AbstractCustomError {
+    public name: string;
+
+    constructor(public message: string, public context?: CustomErrorContext) {
+        this.name = 'Error';
+    }
+}
+
+
+// ---- To move in standard http errors
 export const HTTP_UNKNOWN_ERROR: number = 520;
 
 export class CustomHttpError implements AbstractCustomError {
@@ -34,18 +44,17 @@ export class CustomHttpError implements AbstractCustomError {
         return this.context?.status || HTTP_UNKNOWN_ERROR;
     }
 }
+// ----
 
 /**
  * Standard Errors definitions
  * Error names and code comes from standard RFC HTTP status codes
  * https://fr.wikipedia.org/wiki/Liste_des_codes_HTTP
  */
-/*
-export const BadRequest = (context?: string) => new CustomHttpError('Bad Request', { status: 400 });
-export const Unauthorized = (context?: string) => new CustomHttpError('Unauthorized', { status: 401 });
-export const Forbidden = (context?: string) => new CustomHttpError('Forbidden', { status: 403 });
-export const NotFound = (context?: string) => new CustomHttpError('Not Found', { status: 404 });
-export const RequestTimeOut = (context?: string) => new CustomHttpError('Request Time-out', { status: 408 });
-export const InternalServerError = (context?: string) => new CustomHttpError('Internal Server Error', { status: 500 });
-export const NotImplemented = (context?: string) => new CustomHttpError('Not Implemented', { status: 501 });
-*/
+export const BadRequest = (context?: CustomErrorContext) => new CustomError('Bad Request', context);
+export const Unauthorized = (context?: CustomErrorContext) => new CustomError('Unauthorized', context);
+export const Forbidden = (context?: CustomErrorContext) => new CustomError('Forbidden', context);
+export const NotFound = (context?: CustomErrorContext) => new CustomError('Not Found', context);
+export const RequestTimeOut = (context?: CustomErrorContext) => new CustomError('Request Time-out', context);
+export const InternalServerError = (context?: CustomErrorContext) => new CustomError('Internal Server Error', context);
+export const NotImplemented = (context?: CustomErrorContext) => new CustomError('Not Implemented', context);
