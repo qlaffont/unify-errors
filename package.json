@@ -45,6 +45,12 @@
       "limit": "10 KB"
     }
   ],
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": [
+      "lcov"
+    ]
+  },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^7.0.8",
     "husky": "^7.0.4",
