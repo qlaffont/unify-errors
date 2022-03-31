@@ -25,6 +25,8 @@ export class CustomError implements AbstractCustomError {
     }
 }
 
+// nvmrc, renovate, readme, github workflow, np (node version)
+
 /**
  * Standard Errors definitions
  * Error names and code comes from standard RFC HTTP status codes
