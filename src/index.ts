@@ -5,24 +5,16 @@
 export type CustomErrorContext = Record<'status' | string, unknown>;
 
 /**
- * You can refer to this typescript wiki:
- * https://github.com/Microsoft/TypeScript-wiki/blob/main/Breaking-Changes.md#extending-built-ins-like-error-array-and-map-may-no-longer-work
+ * https://stackoverflow.com/questions/31626231/custom-error-class-in-typescript
  */
-export abstract class AbstractCustomError extends Error {
-  protected constructor(
-    public message: string,
-    public context?: CustomErrorContext
-  ) {
-    super(message);
-    // Set the prototype explicitly.
-    Object.setPrototypeOf(this, AbstractCustomError.prototype);
-  }
-}
-
-export class CustomError implements AbstractCustomError {
+export class CustomError extends Error {
   public name: string;
 
   constructor(public message: string, public context?: CustomErrorContext) {
+    super(message);
+
+    // Set the prototype explicitly.
+    Object.setPrototypeOf(this, CustomError.prototype);
     this.name = 'Error';
   }
 }

@@ -84,3 +84,12 @@ describe('Errors', () => {
     );
   });
 });
+
+describe('Integrity', () => {
+  it('Should be an error type', () => {
+    const error = BadRequest();
+
+    expect(error instanceof CustomError).toBeTruthy();
+    expect(error instanceof Error).toBeTruthy();
+  });
+});
