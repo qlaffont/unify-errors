@@ -15,6 +15,28 @@ function errorExample() {
 }
 ```
 
+## API
+
+**CustomError(message, context?)**
+
+The CustomError class extends the basic typescript Error class. It is used to create all custom errors.
+
+***Params***
+
+| Field Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| message | string | mandatory  | Mandatory error message property  |
+| context  | CustomErrorContext  | {} | Optional record of string |
+
+***How to use***
+
+To create a new error type, export a new const function returning your desired custom error.
+
+````typescript
+export const BadRequest = (context?: CustomErrorContext) =>
+  new CustomError('Bad Request', context);
+````
+
 ## Tests
 
 To execute jest tests (all errors, type integrity test)
