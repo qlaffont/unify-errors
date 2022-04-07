@@ -1,4 +1,4 @@
-[![Test Coverage](https://api.codeclimate.com/v1/badges/6be8e53efc66aabc6a5e/test_coverage)](https://codeclimate.com/github/flexper/unify-errors/test_coverage) [![Maintainability](https://api.codeclimate.com/v1/badges/6be8e53efc66aabc6a5e/maintainability)](https://codeclimate.com/github/flexper/unify-errorss/maintainability) ![npm](https://img.shields.io/npm/v/unify-errors) ![npm](https://img.shields.io/npm/dm/unify-errors) ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/unify-errors) ![NPM](https://img.shields.io/npm/l/unify-errors)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/6be8e53efc66aabc6a5e/test_coverage)](https://codeclimate.com/github/flexper/unify-errors/test_coverage) [![Maintainability](https://api.codeclimate.com/v1/badges/6be8e53efc66aabc6a5e/maintainability)](https://codeclimate.com/github/flexper/unify-errors/maintainability) ![npm](https://img.shields.io/npm/v/unify-errors) ![npm](https://img.shields.io/npm/dm/unify-errors) ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/unify-errors) ![NPM](https://img.shields.io/npm/l/unify-errors)
 
 # Unify errors
 
