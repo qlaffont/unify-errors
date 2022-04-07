@@ -2,7 +2,7 @@
  * Context is used to pass informal data to the exception,
  * We used a string any record to keep the flexibility.
  */
-export type CustomErrorContext = Record<'status' | string, unknown>;
+export type CustomErrorContext = Record<string, unknown>;
 
 /**
  * https://stackoverflow.com/questions/31626231/custom-error-class-in-typescript
