@@ -26,15 +26,20 @@
       "pre-commit": "eslint src test"
     }
   },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
+  "publishConfig": {
+    "access": "public"
   },
-  "name": "standard-errors",
-  "author": "lucas137",
+  "name": "unify-errors",
+  "author": "flexper",
   "module": "dist/standard-errors.esm.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flexper/unify-errors.git"
+  },
+  "bugs": {
+    "url": "https://github.com/flexper/unify-errors/issues",
+    "email": "contact@flexper.fr"
+  },
   "size-limit": [
     {
       "path": "dist/standard-errors.cjs.production.min.js",

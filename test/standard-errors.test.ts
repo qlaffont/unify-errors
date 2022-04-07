@@ -26,7 +26,7 @@ describe('Errors', () => {
       BadRequest({
         context: 'This is the context',
       }),
-      'Bad Request'
+      'Bad Request',
     );
   });
 
@@ -35,7 +35,7 @@ describe('Errors', () => {
       Unauthorized({
         context: 'This is the context',
       }),
-      'Unauthorized'
+      'Unauthorized',
     );
   });
 
@@ -44,7 +44,7 @@ describe('Errors', () => {
       Forbidden({
         context: 'This is the context',
       }),
-      'Forbidden'
+      'Forbidden',
     );
   });
 
@@ -53,7 +53,7 @@ describe('Errors', () => {
       NotFound({
         context: 'This is the context',
       }),
-      'Not Found'
+      'Not Found',
     );
   });
 
@@ -62,7 +62,7 @@ describe('Errors', () => {
       RequestTimeOut({
         context: 'This is the context',
       }),
-      'Request Time-out'
+      'Request Time-out',
     );
   });
 
@@ -71,7 +71,7 @@ describe('Errors', () => {
       InternalServerError({
         context: 'This is the context',
       }),
-      'Internal Server Error'
+      'Internal Server Error',
     );
   });
 
@@ -80,7 +80,7 @@ describe('Errors', () => {
       NotImplemented({
         context: 'This is the context',
       }),
-      'Not Implemented'
+      'Not Implemented',
     );
   });
 });
