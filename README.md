@@ -1,4 +1,4 @@
-[![Test Coverage](https://api.codeclimate.com/v1/badges/e79adf68b976c68f41a6/test_coverage)](https://codeclimate.com/github/flexper/unify-errors/test_coverage) [![Maintainability](https://api.codeclimate.com/v1/badges/e79adf68b976c68f41a6/maintainability)](https://codeclimate.com/github/flexper/unify-errorss/maintainability)
+<a href="https://codeclimate.com/github/flexper/unify-errors/maintainability"><img src="https://api.codeclimate.com/v1/badges/6be8e53efc66aabc6a5e/maintainability" /></a> <a href="https://codeclimate.com/github/flexper/unify-errors/test_coverage"><img src="https://api.codeclimate.com/v1/badges/6be8e53efc66aabc6a5e/test_coverage" /></a>
 # Unify errors
 
 A simple library to normalize typescript standard errors. Feel free to create pull request to define new errors !
