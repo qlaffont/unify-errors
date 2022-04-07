@@ -1,4 +1,5 @@
-<a href="https://codeclimate.com/github/flexper/unify-errors/maintainability"><img src="https://api.codeclimate.com/v1/badges/6be8e53efc66aabc6a5e/maintainability" /></a> <a href="https://codeclimate.com/github/flexper/unify-errors/test_coverage"><img src="https://api.codeclimate.com/v1/badges/6be8e53efc66aabc6a5e/test_coverage" /></a>
+[![Test Coverage](https://api.codeclimate.com/v1/badges/6be8e53efc66aabc6a5e/test_coverage)](https://codeclimate.com/github/flexper/unify-errors/test_coverage) [![Maintainability](https://api.codeclimate.com/v1/badges/6be8e53efc66aabc6a5e/maintainability)](https://codeclimate.com/github/flexper/unify-errorss/maintainability) ![npm](https://img.shields.io/npm/v/unify-errors) ![npm](https://img.shields.io/npm/dm/unify-errors) ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/unify-errors) ![NPM](https://img.shields.io/npm/l/unify-errors)
+
 # Unify errors
 
 A simple library to normalize typescript standard errors. Feel free to create pull request to define new errors !
@@ -17,7 +18,35 @@ function errorExample() {
 
 ## API
 
-**CustomError(message, context?)**
+### BadRequest(context?)
+
+Return: CustomError with Bad Request message.
+
+### Unauthorized(context?)
+
+Return: CustomError with Unauthorized message.
+
+### Forbidden(context?)
+
+Return: CustomError with Forbidden message.
+
+### NotFound(context?)
+
+Return: CustomError with Not Found message.
+
+### RequestTimeOut(context?)
+
+Return: CustomError with Request TimeOut message.
+
+### InternalServerError(context?)
+
+Return: CustomError with Internal Server Error message.
+
+### NotImplemented(context?)
+
+Return: CustomError with Not Implemented message.
+
+### CustomError(message, context?)
 
 The CustomError class extends the basic typescript Error class. It is used to create all custom errors.
 
