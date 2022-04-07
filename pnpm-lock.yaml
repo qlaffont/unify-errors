@@ -10,7 +10,7 @@ specifiers:
   eslint-plugin-prettier: 4.0.0
   eslint-plugin-simple-import-sort: 7.0.0
   husky: 7.0.4
-  np: 7.6.0
+  np: 7.6.1
   prettier: 2.6.0
   size-limit: 7.0.8
   tsdx: 0.14.1
@@ -27,7 +27,7 @@ devDependencies:
   eslint-plugin-prettier: 4.0.0_68edcf5670f37721baf5d2cac6124e4d
   eslint-plugin-simple-import-sort: 7.0.0_eslint@8.11.0
   husky: 7.0.4
-  np: 7.6.0
+  np: 7.6.1
   prettier: 2.6.0
   size-limit: 7.0.8
   tsdx: 0.14.1
@@ -6403,8 +6403,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /np/7.6.0:
-    resolution: {integrity: sha512-WWGZtfNkE6MEkI7LE8NtG7poTqzTHj/tssBzcPnBAdMVPXkXDtX2wk0ptrj8YZ3u4TFmGSqioSohdud86aJxSg==}
+  /np/7.6.1:
+    resolution: {integrity: sha512-EHr5PtMPzNmkM/trnWQWTKAogJnVP1RzTFfIyvPK2COvLN6Vqut4gFXuWNng15xuqnTgmUPzKYbpQAZsYR+Dkw==}
     engines: {git: '>=2.11.0', node: '>=10', npm: '>=6.8.0', yarn: '>=1.7.0'}
     hasBin: true
     dependencies:
