@@ -9,7 +9,7 @@ specifiers:
   eslint-plugin-import: 2.26.0
   eslint-plugin-prettier: 4.0.0
   eslint-plugin-simple-import-sort: 7.0.0
-  husky: 8.0.0
+  husky: 8.0.1
   np: 7.6.1
   prettier: 2.6.2
   size-limit: 7.0.8
@@ -26,7 +26,7 @@ devDependencies:
   eslint-plugin-import: 2.26.0_6nacgdzqm4zbhelsxkmd2vkvxy
   eslint-plugin-prettier: 4.0.0_iqftbjqlxzn3ny5nablrkczhqi
   eslint-plugin-simple-import-sort: 7.0.0_eslint@8.15.0
-  husky: 8.0.0
+  husky: 8.0.1
   np: 7.6.1
   prettier: 2.6.2
   size-limit: 7.0.8
@@ -4768,8 +4768,8 @@ packages:
     resolution: {integrity: sha512-jCVkMl+EaM80rrMrAPl96SGG4NRac53UyI1o/yAzebDntEY6K6/Fj2HOjdPg8omTqIe5Y0wPBai2q5xXrIbarA==}
     dev: true
 
-  /husky/8.0.0:
-    resolution: {integrity: sha512-4qbE/5dzNDNxFEkX9MNRPKl5+omTXQzdILCUWiqG/lWIAioiM5vln265/l6I2Zx8gpW8l1ukZwGQeCFbBZ6+6w==}
+  /husky/8.0.1:
+    resolution: {integrity: sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
