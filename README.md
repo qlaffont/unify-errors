@@ -10,7 +10,7 @@ A simple library to normalize typescript standard errors. Feel free to create pu
 import { BadRequest } from 'unify-errors';
 
 function errorExample() {
-    throw BadRequest({
+    throw new BadRequest({
         context: "Example context"
     });
 }
@@ -59,11 +59,24 @@ The CustomError class extends the basic typescript Error class. It is used to cr
 
 ***How to use***
 
-To create a new error type, export a new const function returning your desired custom error.
+To create a new error type, create a new class extending **CustomError** inside the _errors_ folder.
+
+`Don't forget to export it from index.ts too`
 
 ````typescript
-export const BadRequest = (context?: CustomErrorContext) =>
-  new CustomError('Bad Request', context);
+import { CustomErrorContext } from '../types/CustomErrorContext';
+import { CustomError } from './CustomError';
+
+
+export class InternalServer extends CustomError {
+  constructor(public context?: CustomErrorContext) {
+    super('Internal Server error');
+
+    // Set the prototype explicitly.
+    Object.setPrototypeOf(this, CustomError.prototype);
+  }
+}
+
 ````
 
 ## Tests
