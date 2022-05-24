@@ -6,7 +6,7 @@ import { CustomError } from './CustomError';
  */
 export class InternalServer extends CustomError {
   constructor(public context?: CustomErrorContext) {
-    super('Internal Server error');
+    super('Internal Server Error');
 
     // Set the prototype explicitly.
     Object.setPrototypeOf(this, CustomError.prototype);
