@@ -1,11 +1,13 @@
+import { describe, expect, it } from '@jest/globals';
+
 import {
   BadRequest,
   CustomError,
   Forbidden,
-  InternalServerError,
+  InternalServer,
   NotFound,
   NotImplemented,
-  RequestTimeOut,
+  TimeOut,
   Unauthorized,
 } from '../src';
 
@@ -23,7 +25,7 @@ function wrapThrowTest(exception: CustomError, expectedErrorMessage: string) {
 describe('Errors', () => {
   it('Bad Request', () => {
     wrapThrowTest(
-      BadRequest({
+      new BadRequest({
         context: 'This is the context',
       }),
       'Bad Request',
@@ -32,7 +34,7 @@ describe('Errors', () => {
 
   it('Unauthorized', () => {
     wrapThrowTest(
-      Unauthorized({
+      new Unauthorized({
         context: 'This is the context',
       }),
       'Unauthorized',
@@ -41,7 +43,7 @@ describe('Errors', () => {
 
   it('Forbidden', () => {
     wrapThrowTest(
-      Forbidden({
+      new Forbidden({
         context: 'This is the context',
       }),
       'Forbidden',
@@ -50,7 +52,7 @@ describe('Errors', () => {
 
   it('Not Found', () => {
     wrapThrowTest(
-      NotFound({
+      new NotFound({
         context: 'This is the context',
       }),
       'Not Found',
@@ -59,7 +61,7 @@ describe('Errors', () => {
 
   it('Request Time-out', () => {
     wrapThrowTest(
-      RequestTimeOut({
+      new TimeOut({
         context: 'This is the context',
       }),
       'Request Time-out',
@@ -68,7 +70,7 @@ describe('Errors', () => {
 
   it('Internal Server Error', () => {
     wrapThrowTest(
-      InternalServerError({
+      new InternalServer({
         context: 'This is the context',
       }),
       'Internal Server Error',
@@ -77,7 +79,7 @@ describe('Errors', () => {
 
   it('Not Implemented', () => {
     wrapThrowTest(
-      NotImplemented({
+      new NotImplemented({
         context: 'This is the context',
       }),
       'Not Implemented',
@@ -87,7 +89,7 @@ describe('Errors', () => {
 
 describe('Integrity', () => {
   it('Should be an error type', () => {
-    const error = BadRequest();
+    const error = new BadRequest();
 
     expect(error instanceof CustomError).toBeTruthy();
     expect(error instanceof Error).toBeTruthy();
