@@ -6,9 +6,9 @@ import { CustomError } from './CustomError';
  */
 export class BadRequest extends CustomError {
   constructor(public context?: CustomErrorContext) {
-    super('Bad Request');
+    super('Bad Request', context);
 
     // Set the prototype explicitly.
-    Object.setPrototypeOf(this, CustomError.prototype);
+    Object.setPrototypeOf(this, BadRequest.prototype);
   }
 }

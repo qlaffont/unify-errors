@@ -6,9 +6,9 @@ import { CustomError } from './CustomError';
  */
 export class Forbidden extends CustomError {
   constructor(public context?: CustomErrorContext) {
-    super('Forbidden');
+    super('Forbidden', context);
 
     // Set the prototype explicitly.
-    Object.setPrototypeOf(this, CustomError.prototype);
+    Object.setPrototypeOf(this, Forbidden.prototype);
   }
 }
