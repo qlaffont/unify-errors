@@ -4,7 +4,7 @@ import {
   BadRequest,
   CustomError,
   Forbidden,
-  InternalServer,
+  InternalServerError,
   NotFound,
   NotImplemented,
   TimeOut,
@@ -70,7 +70,7 @@ describe('Errors', () => {
 
   it('Internal Server Error', () => {
     wrapThrowTest(
-      new InternalServer({
+      new InternalServerError({
         context: 'This is the context',
       }),
       'Internal Server Error',
