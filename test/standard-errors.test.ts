@@ -93,5 +93,6 @@ describe('Integrity', () => {
 
     expect(error instanceof CustomError).toBeTruthy();
     expect(error instanceof Error).toBeTruthy();
+    expect(error instanceof BadRequest).toBeTruthy();
   });
 });
