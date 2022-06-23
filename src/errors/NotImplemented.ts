@@ -6,9 +6,9 @@ import { CustomError } from './CustomError';
  */
 export class NotImplemented extends CustomError {
   constructor(public context?: CustomErrorContext) {
-    super('Not Implemented');
+    super('Not Implemented', context);
 
     // Set the prototype explicitly.
-    Object.setPrototypeOf(this, CustomError.prototype);
+    Object.setPrototypeOf(this, NotImplemented.prototype);
   }
 }

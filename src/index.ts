@@ -1,7 +1,7 @@
 export { BadRequest } from './errors/BadRequest';
 export { CustomError } from './errors/CustomError';
 export { Forbidden } from './errors/Forbidden';
-export { InternalServer } from './errors/InternalServer';
+export { InternalServerError } from './errors/InternalServerError';
 export { NotFound } from './errors/NotFound';
 export { NotImplemented } from './errors/NotImplemented';
 export { TimeOut } from './errors/TimeOut';

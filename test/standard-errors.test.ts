@@ -4,7 +4,7 @@ import {
   BadRequest,
   CustomError,
   Forbidden,
-  InternalServer,
+  InternalServerError,
   NotFound,
   NotImplemented,
   TimeOut,
@@ -70,7 +70,7 @@ describe('Errors', () => {
 
   it('Internal Server Error', () => {
     wrapThrowTest(
-      new InternalServer({
+      new InternalServerError({
         context: 'This is the context',
       }),
       'Internal Server Error',
@@ -93,5 +93,6 @@ describe('Integrity', () => {
 
     expect(error instanceof CustomError).toBeTruthy();
     expect(error instanceof Error).toBeTruthy();
+    expect(error instanceof BadRequest).toBeTruthy();
   });
 });

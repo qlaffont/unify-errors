@@ -6,9 +6,9 @@ import { CustomError } from './CustomError';
  */
 export class TimeOut extends CustomError {
   constructor(public context?: CustomErrorContext) {
-    super('Request Time-out');
+    super('Request Time-out', context);
 
     // Set the prototype explicitly.
-    Object.setPrototypeOf(this, CustomError.prototype);
+    Object.setPrototypeOf(this, TimeOut.prototype);
   }
 }

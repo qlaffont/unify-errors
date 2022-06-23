@@ -6,9 +6,9 @@ import { CustomError } from './CustomError';
  */
 export class Unauthorized extends CustomError {
   constructor(public context?: CustomErrorContext) {
-    super('Unauthorized');
+    super('Unauthorized', context);
 
     // Set the prototype explicitly.
-    Object.setPrototypeOf(this, CustomError.prototype);
+    Object.setPrototypeOf(this, Unauthorized.prototype);
   }
 }

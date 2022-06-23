@@ -6,9 +6,9 @@ import { CustomError } from './CustomError';
  */
 export class NotFound extends CustomError {
   constructor(public context?: CustomErrorContext) {
-    super('Not Found');
+    super('Not Found', context);
 
     // Set the prototype explicitly.
-    Object.setPrototypeOf(this, CustomError.prototype);
+    Object.setPrototypeOf(this, NotFound.prototype);
   }
 }
