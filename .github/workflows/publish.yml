@@ -46,7 +46,7 @@ jobs:
         run: pnpm build
 
       - name: Bump version
-        uses: qzb/standard-version-action@v1.0.6
+        uses: qzb/standard-version-action@v1.0.7
 
       - run: |
           git config --global user.name "${{ secrets.USER_NAME }}"
