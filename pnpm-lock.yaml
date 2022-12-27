@@ -11,7 +11,7 @@ specifiers:
   eslint-plugin-prettier: 4.2.1
   eslint-plugin-simple-import-sort: 8.0.0
   husky: 8.0.2
-  np: 7.6.2
+  np: 7.6.3
   prettier: 2.8.1
   size-limit: 8.1.0
   tsdx: 0.14.1
@@ -29,7 +29,7 @@ devDependencies:
   eslint-plugin-prettier: 4.2.1_kl4pe43v5b43npmso5hoplpbyi
   eslint-plugin-simple-import-sort: 8.0.0_eslint@8.30.0
   husky: 8.0.2
-  np: 7.6.2
+  np: 7.6.3
   prettier: 2.8.1
   size-limit: 8.1.0
   tsdx: 0.14.1
@@ -3122,7 +3122,7 @@ packages:
     dev: true
 
   /concat-map/0.0.1:
-    resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
+    resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
     dev: true
 
   /configstore/5.0.1:
@@ -6884,8 +6884,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /np/7.6.2:
-    resolution: {integrity: sha512-gExmKGKixh7ITc4Q+Lv7nfCby0CVKvzri9zN8970oKD8976T4L5dw8QWUtMcXcIjhFF6h5lbvztao/NurDbmxQ==}
+  /np/7.6.3:
+    resolution: {integrity: sha512-GTFNvIhu/cZqzUhil/AlISCiipYeAUVx0JtyjtmumFJvWogSewUSAshFi5MSMc6BOj9C98s8NAFZiqlHb2wQPQ==}
     engines: {git: '>=2.11.0', node: '>=10', npm: '>=6.8.0', yarn: '>=1.7.0'}
     hasBin: true
     dependencies:
