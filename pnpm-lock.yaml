@@ -11,7 +11,7 @@ specifiers:
   eslint-plugin-prettier: 4.2.1
   eslint-plugin-simple-import-sort: 10.0.0
   husky: 8.0.3
-  np: 7.6.3
+  np: 7.6.4
   prettier: 2.8.5
   size-limit: 8.2.4
   tsdx: 0.14.1
@@ -29,7 +29,7 @@ devDependencies:
   eslint-plugin-prettier: 4.2.1_e4jq4ivnnnwcsomlcyj2qoljy4
   eslint-plugin-simple-import-sort: 10.0.0_eslint@8.36.0
   husky: 8.0.3
-  np: 7.6.3
+  np: 7.6.4
   prettier: 2.8.5
   size-limit: 8.2.4
   tsdx: 0.14.1
@@ -6993,8 +6993,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /np/7.6.3:
-    resolution: {integrity: sha512-GTFNvIhu/cZqzUhil/AlISCiipYeAUVx0JtyjtmumFJvWogSewUSAshFi5MSMc6BOj9C98s8NAFZiqlHb2wQPQ==}
+  /np/7.6.4:
+    resolution: {integrity: sha512-w1bwfhN2OCY8VgVdtkSn2vHN+c0KtPnCCWKWvPjuB6WCxMc1bmU797xCc1NZJdRAW2F79zrMMKOIh0N/A1xdXg==}
     engines: {git: '>=2.11.0', node: '>=10', npm: '>=6.8.0', yarn: '>=1.7.0'}
     hasBin: true
     dependencies:
@@ -7032,7 +7032,7 @@ packages:
       pkg-dir: 5.0.0
       read-pkg-up: 7.0.1
       rxjs: 6.6.7
-      semver: 7.3.7
+      semver: 7.3.8
       split: 1.0.1
       symbol-observable: 3.0.0
       terminal-link: 2.1.1
@@ -8106,14 +8106,6 @@ packages:
 
   /semver/7.3.5:
     resolution: {integrity: sha512-PoeGJYh8HK4BTO/a9Tf6ZG3veo/A7ZVsYrSA6J8ny9nb3B1VrpkuN+z9OE5wfE5p6H4LchYZsegiQgbJD94ZFQ==}
-    engines: {node: '>=10'}
-    hasBin: true
-    dependencies:
-      lru-cache: 6.0.0
-    dev: true
-
-  /semver/7.3.7:
-    resolution: {integrity: sha512-QlYTucUYOews+WeEujDoEGziz4K6c47V/Bd+LjSSYcA94p+DmINdf7ncaUinThfvZyu13lN9OY1XDxt8C0Tw0g==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
