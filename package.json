@@ -55,7 +55,10 @@
       "lcov"
     ],
     "preset": "ts-jest",
-    "testEnvironment": "jsdom"
+    "testEnvironment": "jsdom",
+    "testPathIgnorePatterns": [
+      "./node_modules/"
+    ]
   },
   "devDependencies": {
     "@jest/globals": "29.5.0",
