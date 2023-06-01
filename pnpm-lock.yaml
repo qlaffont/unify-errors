@@ -1,4 +1,8 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
 
 devDependencies:
   '@jest/globals':
@@ -41,8 +45,8 @@ devDependencies:
     specifier: ^29.5.0
     version: 29.5.0
   np:
-    specifier: 8.0.0
-    version: 8.0.0
+    specifier: 8.0.2
+    version: 8.0.2
   prettier:
     specifier: 2.8.8
     version: 2.8.8
@@ -3396,8 +3400,8 @@ packages:
     dependencies:
       clone-response: 1.0.2
       get-stream: 5.2.0
-      http-cache-semantics: 4.1.0
-      keyv: 4.1.1
+      http-cache-semantics: 4.1.1
+      keyv: 4.5.2
       lowercase-keys: 2.0.0
       normalize-url: 6.1.0
       responselike: 2.0.0
@@ -5600,10 +5604,6 @@ packages:
     resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==}
     dev: true
 
-  /http-cache-semantics@4.1.0:
-    resolution: {integrity: sha512-carPklcUh7ROWRK7Cv27RPtdhYhUsela/ue5/jKzjegVvXDqM2ILE9Q2BGn9JZJh1g87cp56su/FgQSzcWS8cQ==}
-    dev: true
-
   /http-cache-semantics@4.1.1:
     resolution: {integrity: sha512-er295DKPVsV82j5kw1Gjt+ADA/XYHsajl82cGNQG2eyoPkvgUhX+nDIyelzhIWbbsXP39EHcI6l5tYs2FYqYXQ==}
     dev: true
@@ -7398,12 +7398,6 @@ packages:
       object.assign: 4.1.4
     dev: true
 
-  /keyv@4.1.1:
-    resolution: {integrity: sha512-tGv1yP6snQVDSM4X6yxrv2zzq/EvpW+oYiUz6aueW1u9CtS8RzUQYxxmFwgZlO2jSgCxQbchhxaqXXp2hnKGpQ==}
-    dependencies:
-      json-buffer: 3.0.1
-    dev: true
-
   /keyv@4.5.2:
     resolution: {integrity: sha512-5MHbFaKn8cNSmVW7BYnijeAVlE4cYA/SVkifVgrh7yotnfhKmjuXpDKjrABLnT0SfHWV21P8ow07OGfRrNDg8g==}
     dependencies:
@@ -8017,8 +8011,8 @@ packages:
     engines: {node: '>=14.16'}
     dev: true
 
-  /np@8.0.0:
-    resolution: {integrity: sha512-mVebUNW3MwaYC9PcUzTOHT3fxtEKecOuwXFHnjtfJgVl0OQXwT4VKP3E4VFFaGQu66xfXR/Z8JBOD7ZKh/eAfw==}
+  /np@8.0.2:
+    resolution: {integrity: sha512-mkQB4rEx736mbOd8gq4DfTW/Oh11CplO44AalimMehT7EKJB1vht50DdzpsXL78qPbzjPnnP7JddS179dbsAJg==}
     engines: {git: '>=2.11.0', node: '>=16.6.0', npm: '>=7.19.0', yarn: '>=1.7.0'}
     hasBin: true
     dependencies:
