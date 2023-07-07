@@ -6,7 +6,10 @@ import { CustomErrorContext } from '../types/CustomErrorContext';
 export class CustomError extends Error {
   public name: string;
 
-  constructor(public message: string, public context?: CustomErrorContext) {
+  constructor(
+    public message: string,
+    public context?: CustomErrorContext,
+  ) {
     super(message);
 
     // Set the prototype explicitly.
