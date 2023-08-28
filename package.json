@@ -29,15 +29,15 @@
     "access": "public"
   },
   "name": "unify-errors",
-  "author": "flexper",
+  "author": "qlaffont",
   "module": "dist/unify-errors.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/flexper/unify-errors.git"
+    "url": "https://github.com/qlaffont/unify-errors.git"
   },
   "bugs": {
-    "url": "https://github.com/flexper/unify-errors/issues",
-    "email": "contact@flexper.fr"
+    "url": "https://github.com/qlaffont/unify-errors/issues",
+    "email": "contact@qlaffont.com"
   },
   "size-limit": [
     {
