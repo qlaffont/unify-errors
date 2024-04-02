@@ -10,5 +10,6 @@ export class BadRequest extends CustomError {
 
     // Set the prototype explicitly.
     Object.setPrototypeOf(this, BadRequest.prototype);
+    this.name = 'BadRequest';
   }
 }

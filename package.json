@@ -1,5 +1,5 @@
 {
-  "version": "1.2.228",
+  "version": "1.2.229",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -81,5 +81,6 @@
     "tsdx": "0.14.1",
     "tslib": "2.6.2",
     "typescript": "5.4.3"
-  }
+  },
+  "packageManager": "pnpm@8.15.5+sha256.4b4efa12490e5055d59b9b9fc9438b7d581a6b7af3b5675eb5c5f447cee1a589"
 }

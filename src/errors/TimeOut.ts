@@ -10,5 +10,6 @@ export class TimeOut extends CustomError {
 
     // Set the prototype explicitly.
     Object.setPrototypeOf(this, TimeOut.prototype);
+    this.name = 'TimeOut';
   }
 }

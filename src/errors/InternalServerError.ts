@@ -10,5 +10,6 @@ export class InternalServerError extends CustomError {
 
     // Set the prototype explicitly.
     Object.setPrototypeOf(this, InternalServerError.prototype);
+    this.name = 'InternalServerError';
   }
 }

@@ -10,5 +10,6 @@ export class NotImplemented extends CustomError {
 
     // Set the prototype explicitly.
     Object.setPrototypeOf(this, NotImplemented.prototype);
+    this.name = 'NotImplemented';
   }
 }

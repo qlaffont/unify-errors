@@ -10,5 +10,6 @@ export class Unauthorized extends CustomError {
 
     // Set the prototype explicitly.
     Object.setPrototypeOf(this, Unauthorized.prototype);
+    this.name = 'Unauthorized';
   }
 }

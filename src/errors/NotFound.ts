@@ -10,5 +10,6 @@ export class NotFound extends CustomError {
 
     // Set the prototype explicitly.
     Object.setPrototypeOf(this, NotFound.prototype);
+    this.name = 'NotFound';
   }
 }

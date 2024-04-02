@@ -10,5 +10,6 @@ export class Forbidden extends CustomError {
 
     // Set the prototype explicitly.
     Object.setPrototypeOf(this, Forbidden.prototype);
+    this.name = 'Forbidden';
   }
 }
