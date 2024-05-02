@@ -46,16 +46,20 @@ Return: CustomError with Internal Server Error message.
 
 Return: CustomError with Not Implemented message.
 
+### TooManyRequests(context?)
+
+Return: CustomError with Too Many Requests message.
+
 ### CustomError(message, context?)
 
 The CustomError class extends the basic typescript Error class. It is used to create all custom errors.
 
 ***Params***
 
-| Field Name | Type | Default | Description |
-| --- | --- | --- | --- |
-| message | string | mandatory  | Mandatory error message property  |
-| context  | CustomErrorContext  | {} | Optional record of string |
+| Field Name | Type               | Default   | Description                      |
+| ---------- | ------------------ | --------- | -------------------------------- |
+| message    | string             | mandatory | Mandatory error message property |
+| context    | CustomErrorContext | {}        | Optional record of string        |
 
 ***How to use***
 
