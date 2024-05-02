@@ -5,5 +5,6 @@ export { InternalServerError } from './errors/InternalServerError';
 export { NotFound } from './errors/NotFound';
 export { NotImplemented } from './errors/NotImplemented';
 export { TimeOut } from './errors/TimeOut';
+export { TooManyRequests } from './errors/TooManyRequests';
 export { Unauthorized } from './errors/Unauthorized';
 export { CustomErrorContext } from './types/CustomErrorContext';

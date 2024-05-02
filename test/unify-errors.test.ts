@@ -8,6 +8,7 @@ import {
   NotFound,
   NotImplemented,
   TimeOut,
+  TooManyRequests,
   Unauthorized,
 } from '../src';
 
@@ -74,6 +75,15 @@ describe('Errors', () => {
         context: 'This is the context',
       }),
       'Internal Server Error',
+    );
+  });
+
+  it('TooManyRequests', () => {
+    wrapThrowTest(
+      new TooManyRequests({
+        context: 'This is the context',
+      }),
+      'Too Many Requests',
     );
   });
 
