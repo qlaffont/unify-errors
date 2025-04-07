@@ -66,5 +66,5 @@
     "tslib": "2.6.3",
     "typescript": "5.5.3"
   },
-  "packageManager": "pnpm@10.7.1"
+  "packageManager": "pnpm@10.8.0"
 }
