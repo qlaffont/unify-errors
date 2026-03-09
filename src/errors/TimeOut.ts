@@ -5,7 +5,7 @@ import { CustomError } from './CustomError';
  * https://stackoverflow.com/questions/31626231/custom-error-class-in-typescript
  */
 export class TimeOut extends CustomError {
-  constructor(public context?: CustomErrorContext) {
+  constructor(public context?: CustomErrorContext | undefined) {
     super('Request Time-out', context);
 
     // Set the prototype explicitly.

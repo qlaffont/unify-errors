@@ -8,7 +8,7 @@ export class CustomError extends Error {
 
   constructor(
     public message: string,
-    public context?: CustomErrorContext,
+    public context?: CustomErrorContext | undefined,
   ) {
     super(message);
 

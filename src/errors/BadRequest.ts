@@ -5,7 +5,7 @@ import { CustomError } from './CustomError';
  * https://stackoverflow.com/questions/31626231/custom-error-class-in-typescript
  */
 export class BadRequest extends CustomError {
-  constructor(public context?: CustomErrorContext) {
+  constructor(public context?: CustomErrorContext | undefined) {
     super('Bad Request', context);
 
     // Set the prototype explicitly.
