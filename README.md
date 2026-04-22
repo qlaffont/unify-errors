@@ -1,8 +1,10 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/6be8e53efc66aabc6a5e/test_coverage)](https://codeclimate.com/github/qlaffont/unify-errors/test_coverage) [![Maintainability](https://api.codeclimate.com/v1/badges/6be8e53efc66aabc6a5e/maintainability)](https://codeclimate.com/github/qlaffont/unify-errors/maintainability) ![npm](https://img.shields.io/npm/v/unify-errors) ![npm](https://img.shields.io/npm/dm/unify-errors) ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/unify-errors) ![NPM](https://img.shields.io/npm/l/unify-errors)
 
-# Unify errors
+# unify-errors
 
-A simple library to normalize typescript standard errors. Feel free to create pull request to define new errors ! Old Owner: [@flexper](https://github.com/flexper)
+Shared application error types for TypeScript services. The package keeps
+transport details out of the core model and focuses on a portable payload:
+`code`, `message`, `details`, and `localizedMessage`.
 
 ## Usage
 
@@ -10,87 +12,80 @@ A simple library to normalize typescript standard errors. Feel free to create pu
 import { BadRequest } from 'unify-errors';
 
 function errorExample() {
-    throw new BadRequest({
-        context: "Example context"
-    });
+  throw new BadRequest('INVALID_AMOUNT', {
+    message: 'Amount must be positive',
+    details: ['Got: -5'],
+    localizedMessage: 'Amount must be greater than zero',
+  });
 }
 ```
 
-## API
+## Error model
 
-### BadRequest(context?)
+All built-in error classes extend `CustomError`.
 
-Return: CustomError with Bad Request message.
+```typescript
+new BadRequest(code, {
+  message,
+  details,
+  localizedMessage,
+});
+```
 
-### Unauthorized(context?)
+### `CustomErrorOptions`
 
-Return: CustomError with Unauthorized message.
+| Field | Type | Description |
+| --- | --- | --- |
+| `message` | `string` | Technical message intended for logs or debugging |
+| `details` | `string[]` | Optional detail lines that adapters can expose or strip |
+| `localizedMessage` | `string` | Optional user-facing message |
 
-### Forbidden(context?)
+### `ErrorResponse`
 
-Return: CustomError with Forbidden message.
+`CustomError#toResponse(includeDetails?)` serializes the shared payload:
 
-### NotFound(context?)
+```typescript
+{
+  code?: string;
+  message?: string;
+  details: string[];
+  localizedMessage?: string;
+}
+```
 
-Return: CustomError with Not Found message.
+## Built-in errors
 
-### RequestTimeOut(context?)
+- `BadRequest`
+- `Unauthorized`
+- `Forbidden`
+- `NotFound`
+- `Conflict`
+- `TimeOut`
+- `TooManyRequests`
+- `InternalServerError`
+- `NotImplemented`
+- `ServiceUnavailable`
 
-Return: CustomError with Request TimeOut message.
+## Custom errors
 
-### InternalServerError(context?)
+Create a new class by extending `CustomError` and keeping transport status
+mapping in your adapter layer.
 
-Return: CustomError with Internal Server Error message.
+```typescript
+import { CustomError, type CustomErrorOptions } from 'unify-errors';
 
-### NotImplemented(context?)
+export class PaymentDeclined extends CustomError {
+  constructor(code: string, options: CustomErrorOptions = {}) {
+    super(code, options);
 
-Return: CustomError with Not Implemented message.
-
-### TooManyRequests(context?)
-
-Return: CustomError with Too Many Requests message.
-
-### CustomError(message, context?)
-
-The CustomError class extends the basic typescript Error class. It is used to create all custom errors.
-
-***Params***
-
-| Field Name | Type               | Default   | Description                      |
-| ---------- | ------------------ | --------- | -------------------------------- |
-| message    | string             | mandatory | Mandatory error message property |
-| context    | CustomErrorContext | {}        | Optional record of string        |
-
-***How to use***
-
-To create a new error type, create a new class extending **CustomError** inside the _errors_ folder.
-
-`Don't forget to export it from index.ts too`
-
-````typescript
-import { CustomErrorContext } from '../types/CustomErrorContext';
-import { CustomError } from './CustomError';
-
-
-export class InternalServerError extends CustomError {
-  constructor(public context?: CustomErrorContext) {
-    super('Internal Server error', context);
-
-    // Set the prototype explicitly.
-    Object.setPrototypeOf(this, InternalServerError.prototype);
+    Object.setPrototypeOf(this, PaymentDeclined.prototype);
+    this.name = 'PaymentDeclined';
   }
 }
-
-````
+```
 
 ## Tests
 
-To execute jest tests (all errors, type integrity test)
-
+```bash
+bun test
 ```
-pnpm test
-```
-
-## Maintain
-
-This package use [TSdx](https://github.com/jaredpalmer/tsdx). Please check documentation to update this package.
