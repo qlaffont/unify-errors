@@ -1,19 +1,30 @@
-import { CustomErrorContext } from '../types/CustomErrorContext';
+import type { CustomErrorOptions } from "../types/CustomErrorOptions";
+import type { ErrorResponse } from "../types/ErrorResponse";
 
-/**
- * https://stackoverflow.com/questions/31626231/custom-error-class-in-typescript
- */
 export class CustomError extends Error {
-  public name: string;
+  public readonly code?: string;
+  public readonly details: string[];
+  public readonly localizedMessage?: string;
 
-  constructor(
-    public message: string,
-    public context?: CustomErrorContext | undefined,
-  ) {
-    super(message);
+  constructor(code?: string, options: CustomErrorOptions = {}) {
+    super(options.message ?? "");
 
-    // Set the prototype explicitly.
-    Object.setPrototypeOf(this, CustomError.prototype);
-    this.name = 'Error';
+    Object.setPrototypeOf(this, new.target.prototype);
+    this.name = new.target.name;
+    this.code = code;
+    this.message = options.message ?? "";
+    this.details = options.details ?? [];
+    this.localizedMessage = options.localizedMessage;
+  }
+
+  public toResponse(includeDetails = true): ErrorResponse {
+    return {
+      code: this.code,
+      message: this.message || undefined,
+      details: includeDetails ? this.details : [],
+      localizedMessage: this.localizedMessage,
+    };
   }
 }
+
+export const isCustomError = (error: unknown): error is CustomError => error instanceof CustomError;

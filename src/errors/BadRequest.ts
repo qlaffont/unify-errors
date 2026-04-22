@@ -1,15 +1,11 @@
-import { CustomErrorContext } from '../types/CustomErrorContext';
-import { CustomError } from './CustomError';
+import type { CustomErrorOptions } from "../types/CustomErrorOptions";
+import { CustomError } from "./CustomError";
 
-/**
- * https://stackoverflow.com/questions/31626231/custom-error-class-in-typescript
- */
 export class BadRequest extends CustomError {
-  constructor(public context?: CustomErrorContext | undefined) {
-    super('Bad Request', context);
+  constructor(code: string, options: CustomErrorOptions = {}) {
+    super(code, options);
 
-    // Set the prototype explicitly.
     Object.setPrototypeOf(this, BadRequest.prototype);
-    this.name = 'BadRequest';
+    this.name = "BadRequest";
   }
 }

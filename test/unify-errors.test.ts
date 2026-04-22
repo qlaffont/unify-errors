@@ -1,105 +1,148 @@
-import { describe, expect, it } from 'bun:test';
+import { describe, expect, it } from "bun:test";
 
 import {
   BadRequest,
+  Conflict,
   CustomError,
   Forbidden,
   InternalServerError,
   NotFound,
   NotImplemented,
+  ServiceUnavailable,
   TimeOut,
   TooManyRequests,
   Unauthorized,
-} from '../src';
+} from "../src";
 
-function wrapThrowTest(exception: CustomError, expectedErrorMessage: string) {
+function wrapThrowTest(exception: CustomError) {
   const error = () => {
     throw exception;
   };
+
   expect(error).toThrow(exception);
-  expect(exception.context).toStrictEqual({
-    context: 'This is the context',
+  expect(exception.code).toBe("ERROR_CODE");
+  expect(exception.message).toBe("Technical message");
+  expect(exception.details).toStrictEqual(["detail-1"]);
+  expect(exception.localizedMessage).toBe("Localized message");
+  expect(exception.toResponse()).toStrictEqual({
+    code: "ERROR_CODE",
+    message: "Technical message",
+    details: ["detail-1"],
+    localizedMessage: "Localized message",
   });
-  expect(exception.message).toBe(expectedErrorMessage);
+  expect(exception.toResponse(false)).toStrictEqual({
+    code: "ERROR_CODE",
+    message: "Technical message",
+    details: [],
+    localizedMessage: "Localized message",
+  });
 }
 
-describe('Errors', () => {
-  it('Bad Request', () => {
+describe("Errors", () => {
+  it("Bad Request", () => {
     wrapThrowTest(
-      new BadRequest({
-        context: 'This is the context',
+      new BadRequest("ERROR_CODE", {
+        message: "Technical message",
+        details: ["detail-1"],
+        localizedMessage: "Localized message",
       }),
-      'Bad Request',
     );
   });
 
-  it('Unauthorized', () => {
+  it("Unauthorized", () => {
     wrapThrowTest(
-      new Unauthorized({
-        context: 'This is the context',
+      new Unauthorized("ERROR_CODE", {
+        message: "Technical message",
+        details: ["detail-1"],
+        localizedMessage: "Localized message",
       }),
-      'Unauthorized',
     );
   });
 
-  it('Forbidden', () => {
+  it("Forbidden", () => {
     wrapThrowTest(
-      new Forbidden({
-        context: 'This is the context',
+      new Forbidden("ERROR_CODE", {
+        message: "Technical message",
+        details: ["detail-1"],
+        localizedMessage: "Localized message",
       }),
-      'Forbidden',
     );
   });
 
-  it('Not Found', () => {
+  it("Not Found", () => {
     wrapThrowTest(
-      new NotFound({
-        context: 'This is the context',
+      new NotFound("ERROR_CODE", {
+        message: "Technical message",
+        details: ["detail-1"],
+        localizedMessage: "Localized message",
       }),
-      'Not Found',
     );
   });
 
-  it('Request Time-out', () => {
+  it("Request Time-out", () => {
     wrapThrowTest(
-      new TimeOut({
-        context: 'This is the context',
+      new TimeOut("ERROR_CODE", {
+        message: "Technical message",
+        details: ["detail-1"],
+        localizedMessage: "Localized message",
       }),
-      'Request Time-out',
     );
   });
 
-  it('Internal Server Error', () => {
+  it("Internal Server Error", () => {
     wrapThrowTest(
-      new InternalServerError({
-        context: 'This is the context',
+      new InternalServerError("ERROR_CODE", {
+        message: "Technical message",
+        details: ["detail-1"],
+        localizedMessage: "Localized message",
       }),
-      'Internal Server Error',
     );
   });
 
-  it('TooManyRequests', () => {
+  it("TooManyRequests", () => {
     wrapThrowTest(
-      new TooManyRequests({
-        context: 'This is the context',
+      new TooManyRequests("ERROR_CODE", {
+        message: "Technical message",
+        details: ["detail-1"],
+        localizedMessage: "Localized message",
       }),
-      'Too Many Requests',
     );
   });
 
-  it('Not Implemented', () => {
+  it("Not Implemented", () => {
     wrapThrowTest(
-      new NotImplemented({
-        context: 'This is the context',
+      new NotImplemented("ERROR_CODE", {
+        message: "Technical message",
+        details: ["detail-1"],
+        localizedMessage: "Localized message",
       }),
-      'Not Implemented',
+    );
+  });
+
+  it("Conflict", () => {
+    wrapThrowTest(
+      new Conflict("ERROR_CODE", {
+        message: "Technical message",
+        details: ["detail-1"],
+        localizedMessage: "Localized message",
+      }),
+    );
+  });
+
+  it("Service Unavailable", () => {
+    wrapThrowTest(
+      new ServiceUnavailable("ERROR_CODE", {
+        message: "Technical message",
+        details: ["detail-1"],
+        localizedMessage: "Localized message",
+      }),
     );
   });
 });
 
-describe('Integrity', () => {
-  it('Should be an error type', () => {
-    const error = new BadRequest();
+describe("Integrity", () => {
+  it("Should be an error type", () => {
+    const error = new BadRequest("BAD_REQUEST");
 
     expect(error instanceof CustomError).toBeTruthy();
     expect(error instanceof Error).toBeTruthy();
